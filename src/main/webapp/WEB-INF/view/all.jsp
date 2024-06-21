@@ -146,6 +146,10 @@
           <li class="nav-item">
             <a class="nav-link" href="/cname">會員登入/註冊</a>
           </li>
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/cname">購物車</a>
+          </li>
 
 
 
