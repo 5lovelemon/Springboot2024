@@ -107,7 +107,7 @@
           </li>
           
           <li class="nav-item">
-            <a class="nav-link" href="/">購物車</a>
+            <a class="nav-link" href="/cname">購物車</a>
           </li>
 
           <!-- 可以是搜尋用的表單 -->
