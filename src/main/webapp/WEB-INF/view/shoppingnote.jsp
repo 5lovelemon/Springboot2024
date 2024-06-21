@@ -19,6 +19,7 @@
 
   <!-- 共用的CSS -->
   <link rel="stylesheet" href="./css/cake.css">
+  <link rel="stylesheet" href="./css/cake.css">
 
   <!-- 專屬頁面的CSS -->
   <style>
