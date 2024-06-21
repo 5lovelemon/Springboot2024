@@ -129,7 +129,7 @@
         <button type="submit">註冊</button>
       </form>
       <div class="register-link">
-        已經有帳號？<a href="/cname">立即登入</a>
+        已經有帳號？<a href="/">立即登入</a>
       </div>
     </div>
   </div>

@@ -56,7 +56,7 @@
     		還不是會員？<a href="/account">註冊新帳號</a>
   		</div>
   			<div style="float: right;">
-    			<a href="/">返回首頁</a>
+    			<a href="/cake">返回首頁</a>
   			</div>
   		<div style="clear: both;">
   		</div>
