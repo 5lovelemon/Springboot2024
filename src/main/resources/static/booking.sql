@@ -19,7 +19,7 @@ CREATE TABLE cake (
 );
 
 --訂單 # 因order在mysql是關鍵字，所以要加上反引號" ` "
-CREATE TABLE `order` (
+CREATE TABLE orders (
     orderid SERIAL PRIMARY KEY,
     userid INT NOT NULL,
     cakeid INT NOT NULL,

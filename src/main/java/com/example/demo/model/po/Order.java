@@ -1,26 +1,66 @@
 package com.example.demo.model.po;
 
-import java.util.List;
-import java.util.concurrent.CopyOnWriteArrayList;
+import java.time.LocalDateTime;
+
+import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.Column;
+import org.springframework.data.relational.core.mapping.Table;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
 
-@Getter
-@Setter
-@ToString
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Table("order")
+public class Order {
 
-public class Order { // 訂單主檔
-	private Integer orderid; // 訂單編號
-	private Integer userid; // 用戶編號
-	private String created_at; // 訂單日期
-	private List<Item> items = new CopyOnWriteArrayList<>(); // 訂單項目(明細)
-	private Integer total_price; // 總計
+    @Id
+    @Column("orderid")
+    private Integer orderId;
+
+    @Column("userid")
+    private Integer userId;
+
+    @Column("cakeid")
+    private Integer cakeId;
+
+    @Column("quantity")
+    private Integer quantity;
+
+    @Column("order_status")
+    private String orderStatus;
+
+    @Column("total_price")
+    private Integer totalPrice;
+
+    @Column("created_at")
+    private LocalDateTime created_at;
+    
+    // Getters 和 Setters
+    
+    public Integer getOrderId() {
+    	return orderId;
+    }
+    
+    public void setOrderId(Integer orderId) {
+    	this.orderId = orderId;
+    }
+    
+    public Integer getUserId() {
+    	return userId;
+    }
+    
+    public void setUserId() {
+    	this.userId = userId;
+    }
+    
+    public Integer getCakeId() {
+    	return cakeId;
+    }
+    
+    public void setCakeId() {
+    	this.cakeId = cakeId;
+    }
 }
