@@ -5,7 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import com.example.demo.model.po.Cake;
+import com.example.demo.model.po.Product;
 import com.example.demo.service.ProductService;
 import com.example.demo.service.ShoppingService;
 
@@ -26,7 +26,7 @@ public class ProductController {
 
     @PostMapping("/add-to-cart")
     public String addToCart(@RequestParam Integer cakeId, @RequestParam Integer quantity, Model model) {
-        Cake cake = productService.findById(cakeId).orElseThrow(() -> new RuntimeException("Product not found"));
+        Product cake = productService.findById(cakeId).orElseThrow(() -> new RuntimeException("Product not found"));
         cake.setQuantity(quantity);
         shoppingService.addToCart(cake);
         return "redirect:/products";
@@ -37,5 +37,23 @@ public class ProductController {
         model.addAttribute("cartItems", shoppingService.getCakesInCart());
         model.addAttribute("totalPrice", shoppingService.calculateTotalPrice());
         return "cart";
+    }
+
+    @PostMapping("/update-quantity")
+    public String updateQuantity(@RequestParam Integer cakeId, @RequestParam Integer quantity) {
+        shoppingService.updateQuantity(cakeId, quantity);
+        return "redirect:/cart";
+    }
+
+    @PostMapping("/remove-from-cart")
+    public String removeFromCart(@RequestParam Integer cakeId) {
+        shoppingService.removeFromCart(cakeId);
+        return "redirect:/cart";
+    }
+
+    @PostMapping("/clear-cart")
+    public String clearCart() {
+        shoppingService.clearCart();
+        return "redirect:/cart";
     }
 }

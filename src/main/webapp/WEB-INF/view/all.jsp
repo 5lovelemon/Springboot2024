@@ -148,7 +148,7 @@
           </li>
           
           <li class="nav-item">
-            <a class="nav-link" href="/cname">購物車</a>
+            <a class="nav-link" href="/cart">購物車</a>
           </li>
 
 
@@ -215,7 +215,7 @@
                             <button type="button" class="btn btn-outline-primary" onclick="selectCakeSize('8寸')">8 寸</button>
                             <!-- <button type="button" class="btn btn-outline-primary" onclick="selectCakeSize('片')">片</button> -->
                           </div>
-                          <input type="hidden" id="selectedSize">
+                          <input type="hidden" id="selectedSize1">
                         </p>
                         <p><strong>蛋糕數量：</strong> <input type="number" value="1" min="1"></p>
                         <button class="btn btn-primary">加入購物車</button>
@@ -258,7 +258,11 @@
                           <input type="hidden" id="selectedSize2">
                         </p>
                         <p><strong>蛋糕數量：</strong> <input type="number" value="1" min="1"></p>
-                        <button class="btn btn-primary">加入購物車</button>
+                        <form action="${pageContext.request.contextPath}/add-to-cart" method="post">
+                            <input type="hidden" name="cakeId" value="1">
+                            <input type="hidden" name="quantity" value="1">
+                            <button type="submit" class="btn btn-primary">加入購物車</button>
+                        </form>
                       </div>
                     </div>
                   </div>
@@ -305,14 +309,6 @@
               </div>
             </div>
 
-            <!-- 當用戶通過按鈕選擇size，將用戶選擇的資訊傳遞給後端做處理 -->
-            <script>
-              function selectCakeSize(size) {
-                document.getElementById('selectedSize').value = size;  // 用於橘子蛋糕
-                document.getElementById('selectedSize2').value = size; // 用於原味蛋糕
-                document.getElementById('selectedSize3').value = size; // 用於巧克力蛋糕
-              }
-            </script>
 
             <!-- <div class="col-12 com-sm-6 col-md-3 p-4">
               <img src="" class="d-block mw-100 mx-auto rounded mb-2" data-bs-toggle="modal" data-bs-target="#prodModal" alt="">
@@ -588,6 +584,20 @@
               </div>
             </div>
             
+            <!-- 當用戶通過按鈕選擇size，將用戶選擇的資訊傳遞給後端做處理 -->
+            <script>
+              function selectCakeSize(size) {
+                document.getElementById('selectedSize1').value = size;  // 用於橘子蛋糕
+                document.getElementById('selectedSize2').value = size; // 用於原味蛋糕
+                document.getElementById('selectedSize3').value = size; // 用於巧克力蛋糕
+                document.getElementById('selectedSize4').value = size; // 用於橘子醬蛋糕
+                document.getElementById('selectedSize5').value = size; // 用於牛奶蛋糕
+                document.getElementById('selectedSize6').value = size; // 用於雙倍巧克力蛋糕
+                document.getElementById('selectedSize7').value = size; // 用於橘子口味蛋糕
+                document.getElementById('selectedSize8').value = size; // 用於水果蛋糕
+                document.getElementById('selectedSize9').value = size; // 用於芝心巧克力蛋糕
+              }
+            </script>
 
             <!-- <div class="col-12 com-sm-6 col-md-3 p-4">
               <img src="" class="d-block mw-100 mx-auto rounded mb-2" data-bs-toggle="modal" data-bs-target="#prodModal" alt="">

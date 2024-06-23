@@ -1,61 +1,52 @@
 package com.example.demo.service;
 
-import com.example.demo.model.po.Cake;
-import org.springframework.stereotype.Service;
-
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
+
+import org.springframework.stereotype.Service;
+
+import com.example.demo.model.po.Product;
 
 @Service
 public class ShoppingService {
 
-    private List<Cake> cakesInCart = new ArrayList<>();
+    private List<Product> cart = new ArrayList<>();
 
-    public List<Cake> getCakesInCart() {
-        return cakesInCart;
+    public void addToCart(Product product) {
+        Optional<Product> existingProduct = cart.stream()
+                .filter(p -> p.getCakeid().equals(product.getCakeid()))
+                .findFirst();
+        if (existingProduct.isPresent()) {
+            Product p = existingProduct.get();
+            p.setQuantity(p.getQuantity() + product.getQuantity());
+        } else {
+            cart.add(product);
+        }
     }
 
-    public void addToCart(Cake cake) {
-        // 将商品添加到购物车，如果购物车中已有相同商品，则增加数量；否则添加新项目到购物车
-        boolean found = false;
-        for (Cake item : cakesInCart) {
-            if (item.getCakeid().equals(cake.getCakeid())) {
-                item.setQuantity(item.getQuantity() + cake.getQuantity());
-                found = true;
-                break;
-            }
-        }
-        if (!found) {
-            cakesInCart.add(cake);
-        }
+    public List<Product> getCakesInCart() {
+        return new ArrayList<>(cart);
+    }
+
+    public void updateQuantity(Integer cakeId, Integer quantity) {
+        cart.stream()
+            .filter(p -> p.getCakeid().equals(cakeId))
+            .findFirst()
+            .ifPresent(p -> p.setQuantity(quantity));
     }
 
     public void removeFromCart(Integer cakeId) {
-        // 从购物车中移除指定编号的蛋糕项目
-        cakesInCart.removeIf(cake -> cake.getCakeid().equals(cakeId));
+        cart.removeIf(p -> p.getCakeid().equals(cakeId));
     }
 
     public void clearCart() {
-        // 清空购物车
-        cakesInCart.clear();
+        cart.clear();
     }
 
-    public void updateQuantity(Integer cakeId, Integer newQuantity) {
-        // 更新购物车中指定编号蛋糕项目的数量
-        for (Cake cake : cakesInCart) {
-            if (cake.getCakeid().equals(cakeId)) {
-                cake.setQuantity(newQuantity);
-                break;
-            }
-        }
-    }
-
-    public int calculateTotalPrice() {
-        // 计算购物车中所有商品的总价格
-        int totalPrice = 0;
-        for (Cake cake : cakesInCart) {
-            totalPrice += cake.getCakeprice() * cake.getQuantity();
-        }
-        return totalPrice;
+    public double calculateTotalPrice() {
+        return cart.stream()
+                   .mapToDouble(p -> p.getCakeprice() * p.getQuantity())
+                   .sum();
     }
 }

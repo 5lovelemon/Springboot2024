@@ -4,18 +4,16 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-
-public class Cake { // 蛋糕商品
-	private Integer cakeid; // 蛋糕id
-	private String cakename; // 蛋糕名稱
-	private Integer cakeprice; // 蛋糕價格
-	private Integer quantity; // 蛋糕數量
-	
-	public Integer getCakeid() {
+public class Product { // 蛋糕商品
+    private Integer cakeid; // 蛋糕id
+    private String cakename; // 蛋糕名稱
+    private Integer cakeprice; // 蛋糕價格
+    private Integer quantity; // 蛋糕數量
+    
+    public Integer getCakeid() {
         return cakeid;
     }
 
