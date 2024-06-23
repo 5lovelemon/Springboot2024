@@ -18,7 +18,7 @@ public class OrderDaoImpl implements OrderDao {
 
     @Override
     public List<Order> findAllOrders() {
-        String sql = "SELECT * FROM `order`";
+        String sql = "SELECT * FROM `order`";12
         return jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(Order.class));
     }
 
