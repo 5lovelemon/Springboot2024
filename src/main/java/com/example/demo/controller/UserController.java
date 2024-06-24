@@ -12,6 +12,8 @@ import com.example.demo.model.dto.UserUpdateDto;
 import com.example.demo.model.po.User;
 import com.example.demo.service.UserService;
 
+import jakarta.servlet.http.HttpSession;
+
 @Controller
 @RequestMapping
 public class UserController {
@@ -57,13 +59,23 @@ public class UserController {
     }
 
     @PostMapping("/cname")
-    public String login(@RequestParam String email, @RequestParam String password, Model model) {
+    public String login(@RequestParam String email, @RequestParam String password, Model model, HttpSession session) {
         Optional<User> userOpt = userService.getUserByEmail(email);
         if (userOpt.isPresent() && userOpt.get().getPassword().equals(password)) {
-            return "redirect:/cake"; // 登录成功，跳转到首页
+            return "redirect:/cake"; // 登入成功，跳转到首页
         } else {
-            model.addAttribute("message", "登录失败，用户名或密码错误");
-            return "cname"; // 登录失败，保留在登录页面
+            model.addAttribute("message", "登入失敗，用戶名或密碼錯誤");
+            return "cname"; // 登入失敗，保留在登入頁面
         }
     }
+    
+    // 用戶登出
+    @GetMapping("/logout")
+    public String logout(HttpSession session) {
+        session.invalidate(); // 清除當前用戶的會話信息
+        return "redirect:/cname"; // 重定向到登入頁面
+    }
+    
+    
+
 }
