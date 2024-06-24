@@ -9,8 +9,8 @@ CREATE TABLE user (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
---蛋糕
-CREATE TABLE cake (
+--建立 蛋糕商品
+CREATE TABLE product (
     cakeid SERIAL PRIMARY KEY,
     cakename VARCHAR(100) NOT NULL,
     cakeprice INT NOT NULL,

@@ -7,16 +7,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class AllController {
     
     // 顯示蛋糕首頁
-	@GetMapping({"/cake", "/"})
+	@GetMapping({"/cake", "/"}) // 多打 "/" 是默認入口點
     public String showCakePage() {
         return "cake"; // 返回蛋糕首頁
     }
     
-    // 顯示全部蛋糕頁面
-    @GetMapping("/all")
-    public String showAllCakesPage() {
-        return "all"; // 返回全部蛋糕頁面
-    }
+//    // 顯示全部蛋糕頁面
+//    @GetMapping("/product")
+//    public String showAllCakesPage() {
+//        return "product"; // 返回全部蛋糕頁面
+//    }
     
     // 顯示購物須知
     @GetMapping("/shoppingnote")
