@@ -210,10 +210,10 @@
                     <p><strong>蛋糕名字：</strong> 橘子蛋糕</p>
                     <p><strong>蛋糕價格：</strong> $90</p>
                     <form action="${pageContext.request.contextPath}/add-to-cart" method="post">
-                      <input type="hidden" name="cakeId" value="1">
+                      <input type="hidden" name="cakeId" value="1"> <!-- 設置正確 商品cakeId -->
                       <div class="mb-3">
-                        <label for="quantity" class="form-label">蛋糕數量：</label>
-                        <input type="number" class="form-control" id="quantity" name="quantity" value="1" min="1">
+                        <label for="quantity1" class="form-label">蛋糕數量：</label>
+                        <input type="number" class="form-control" id="quantity1" name="quantity" value="1" min="1">
                       </div>
                       <button type="submit" class="btn btn-primary">加入購物車</button>
                     </form>
@@ -247,12 +247,14 @@
                         <p><strong>蛋糕編號：</strong> 02</p>
                         <p><strong>蛋糕名字：</strong> 原味蛋糕</p>
                         <p><strong>蛋糕價格：</strong> $80</p>
-                        <p><strong>蛋糕數量：</strong> <input type="number" value="1" min="1"></p>
                         <form action="${pageContext.request.contextPath}/add-to-cart" method="post">
-                            <input type="hidden" name="cakeId" value="1">
-                            <input type="hidden" name="quantity" value="1">
-                            <button type="submit" class="btn btn-primary">加入購物車</button>
-                        </form>
+                      		<input type="hidden" name="cakeId" value="2"> <!-- 設置正確 商品cakeId -->
+                      	<div class="mb-3">
+                        	<label for="quantity2" class="form-label">蛋糕數量：</label>
+                        	<input type="number" class="form-control" id="quantity2" name="quantity" value="1" min="1">
+                      	</div>
+                      	<button type="submit" class="btn btn-primary">加入購物車</button>
+                    	</form>
                       </div>
                     </div>
                   </div>
@@ -282,8 +284,14 @@
                         <p><strong>蛋糕編號：</strong> 03</p>
                         <p><strong>蛋糕名字：</strong> 巧克力蛋糕</p>
                         <p><strong>蛋糕價格：</strong> $95</p>
-                        <p><strong>蛋糕數量：</strong> <input type="number" value="1" min="1"></p>
-                        <button class="btn btn-primary">加入購物車</button>
+                        <form action="${pageContext.request.contextPath}/add-to-cart" method="post">
+                      			<input type="hidden" name="cakeId" value="3"> <!-- 設置正確 商品cakeId -->
+                      		<div class="mb-3">
+                        	<label for="quantity3" class="form-label">蛋糕數量：</label>
+                        	<input type="number" class="form-control" id="quantity3" name="quantity" value="1" min="1">
+                      		</div>
+                      		<button type="submit" class="btn btn-primary">加入購物車</button>
+                    	</form>
                       </div>
                     </div>
                   </div>
@@ -335,8 +343,14 @@
                         <p><strong>蛋糕編號：</strong> 04</p>
                         <p><strong>蛋糕名字：</strong> 橘子醬蛋糕</p>
                         <p><strong>蛋糕價格：</strong> $90</p>
-                        <p><strong>蛋糕數量：</strong> <input type="number" value="1" min="1"></p>
-                        <button class="btn btn-primary">加入購物車</button>
+                        <form action="${pageContext.request.contextPath}/add-to-cart" method="post">
+                      			<input type="hidden" name="cakeId" value="4"> <!-- 設置正確 商品cakeId -->
+                      		<div class="mb-3">
+                        	<label for="quantity4" class="form-label">蛋糕數量：</label>
+                        	<input type="number" class="form-control" id="quantity4" name="quantity" value="1" min="1">
+                      		</div>
+                      		<button type="submit" class="btn btn-primary">加入購物車</button>
+                    	</form>
                       </div>
                     </div>
                   </div>
@@ -366,8 +380,14 @@
                         <p><strong>蛋糕編號：</strong> 05</p>
                         <p><strong>蛋糕名字：</strong> 牛奶蛋糕</p>
                         <p><strong>蛋糕價格：</strong> $80</p>
-                        <p><strong>蛋糕數量：</strong> <input type="number" value="1" min="1"></p>
-                        <button class="btn btn-primary">加入購物車</button>
+                        <form action="${pageContext.request.contextPath}/add-to-cart" method="post">
+                      			<input type="hidden" name="cakeId" value="5"> <!-- 設置正確 商品cakeId -->
+                      		<div class="mb-3">
+                        	<label for="quantity5" class="form-label">蛋糕數量：</label>
+                        	<input type="number" class="form-control" id="quantity5" name="quantity" value="1" min="1">
+                      		</div>
+                      		<button type="submit" class="btn btn-primary">加入購物車</button>
+                    	</form>
                       </div>
                     </div>
                   </div>
@@ -397,8 +417,14 @@
                         <p><strong>蛋糕編號：</strong> 06</p>
                         <p><strong>蛋糕名字：</strong> 雙倍巧克力蛋糕</p>
                         <p><strong>蛋糕價格：</strong> $95</p>
-                        <p><strong>蛋糕數量：</strong> <input type="number" value="1" min="1"></p>
-                        <button class="btn btn-primary">加入購物車</button>
+                        <form action="${pageContext.request.contextPath}/add-to-cart" method="post">
+                      			<input type="hidden" name="cakeId" value="6"> <!-- 設置正確 商品cakeId -->
+                      		<div class="mb-3">
+                        	<label for="quantity6" class="form-label">蛋糕數量：</label>
+                        	<input type="number" class="form-control" id="quantity6" name="quantity" value="1" min="1">
+                      		</div>
+                      		<button type="submit" class="btn btn-primary">加入購物車</button>
+                    	</form>
                       </div>
                     </div>
                   </div>
@@ -447,8 +473,14 @@
                         <p><strong>蛋糕編號：</strong> 07</p>
                         <p><strong>蛋糕名字：</strong> 橘子口味蛋糕</p>
                         <p><strong>蛋糕價格：</strong> $85</p>
-                        <p><strong>蛋糕數量：</strong> <input type="number" value="1" min="1"></p>
-                        <button class="btn btn-primary">加入購物車</button>
+                        <form action="${pageContext.request.contextPath}/add-to-cart" method="post">
+                      			<input type="hidden" name="cakeId" value="7"> <!-- 設置正確 商品cakeId -->
+                      		<div class="mb-3">
+                        	<label for="quantity7" class="form-label">蛋糕數量：</label>
+                        	<input type="number" class="form-control" id="quantity7" name="quantity" value="1" min="1">
+                      		</div>
+                      		<button type="submit" class="btn btn-primary">加入購物車</button>
+                    	</form>
                       </div>
                     </div>
                   </div>
@@ -478,8 +510,14 @@
                         <p><strong>蛋糕編號：</strong> 08</p>
                         <p><strong>蛋糕名字：</strong> 水果蛋糕</p>
                         <p><strong>蛋糕價格：</strong> $80</p>
-                        <p><strong>蛋糕數量：</strong> <input type="number" value="1" min="1"></p>
-                        <button class="btn btn-primary">加入購物車</button>
+                        <form action="${pageContext.request.contextPath}/add-to-cart" method="post">
+                      			<input type="hidden" name="cakeId" value="8"> <!-- 設置正確 商品cakeId -->
+                      		<div class="mb-3">
+                        	<label for="quantity8" class="form-label">蛋糕數量：</label>
+                        	<input type="number" class="form-control" id="quantity8" name="quantity" value="1" min="1">
+                      		</div>
+                      		<button type="submit" class="btn btn-primary">加入購物車</button>
+                    	</form>
                       </div>
                     </div>
                   </div>
@@ -509,8 +547,14 @@
                         <p><strong>蛋糕編號：</strong> 09</p>
                         <p><strong>蛋糕名字：</strong> 芝心巧克力蛋糕</p>
                         <p><strong>蛋糕價格：</strong> $95</p>
-                        <p><strong>蛋糕數量：</strong> <input type="number" value="1" min="1"></p>
-                        <button class="btn btn-primary">加入購物車</button>
+                        <form action="${pageContext.request.contextPath}/add-to-cart" method="post">
+                      			<input type="hidden" name="cakeId" value="9"> <!-- 設置正確 商品cakeId -->
+                      		<div class="mb-3">
+                        	<label for="quantity9" class="form-label">蛋糕數量：</label>
+                        	<input type="number" class="form-control" id="quantity9" name="quantity" value="1" min="1">
+                      		</div>
+                      		<button type="submit" class="btn btn-primary">加入購物車</button>
+                    	</form>
                       </div>
                     </div>
                   </div>
