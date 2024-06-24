@@ -14,8 +14,6 @@ public class ProductController {
 
     @Autowired
     private ProductService productService;
-
-    @Autowired
     private ShoppingService shoppingService;
 
     @GetMapping("/products")

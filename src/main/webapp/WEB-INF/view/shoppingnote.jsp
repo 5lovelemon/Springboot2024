@@ -76,7 +76,7 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="/all">全部商品</a>
+            <a class="nav-link" href="/product">全部商品</a>
           </li>
 
           <li class="nav-item">

@@ -8,10 +8,12 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Product { // 蛋糕商品
-    private Integer cakeid; // 蛋糕id
+    private Integer cakeid; // 商品蛋糕id
     private String cakename; // 蛋糕名稱
     private Integer cakeprice; // 蛋糕價格
-    private Integer quantity; // 蛋糕數量
+    private Integer quantity; // 訂購蛋糕數量
+    
+    // Getters 和 Setters
     
     public Integer getCakeid() {
         return cakeid;

@@ -1,56 +1,49 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" 
-	pageEncoding="UTF-8"%>
-<!-- Tomcat 10.x JSTL -->    
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <%@ taglib prefix="fmt" uri="jakarta.tags.fmt" %>
-<!-- Spring Form 表單標籤 -->
 <%@ taglib prefix="sp" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html lang="zh-Hant-TW">
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="UTF-8">
-    <title>訂單列表</title>
-    <link href="images/CAKE2_logo.png" rel="icon" type="image/x-ico">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css">
+  <meta charset="UTF-8">
+  <title>訂單清單</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css">
 </head>
 
 <body>
-    <div class="container">
-        <h2 class="my-4">訂單列表</h2>
-        <c:if test="${not empty orders}">
-            <table class="table table-bordered">
-                <thead>
-                    <tr>
-                        <th>訂單編號</th>
-                        <th>用戶ID</th>
-                        <th>蛋糕ID</th>
-                        <th>數量</th>
-                        <th>訂單狀態</th>
-                        <th>總價</th>
-                        <th>創建時間</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <c:forEach var="order" items="${orders}">
-                        <tr>
-                            <td>${order.orderId}</td>
-                            <td>${order.userId}</td>
-                            <td>${order.cakeId}</td>
-                            <td>${order.quantity}</td>
-                            <td>${order.orderStatus}</td>
-                            <td>${order.totalPrice}</td>
-                            <td>${order.createdAt}</td>
-                        </tr>
-                    </c:forEach>
-                </tbody>
-            </table>
-        </c:if>
-        <c:if test="${empty orders}">
-            <p>目前沒有訂單。</p>
-        </c:if>
-    </div>
+  <div class="container">
+    <h2 class="my-4">訂單清單</h2>
+    <c:forEach var="order" items="${orders}">
+      <div class="card mb-3">
+        <div class="card-header">
+          訂單編號: ${order.id} | 訂單時間: ${order.created_at} | 總金額: ${order.total}
+        </div>
+        <div class="card-body">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>蛋糕名稱</th>
+                <th>數量</th>
+                <th>小計</th>
+              </tr>
+            </thead>
+            <tbody>
+              <c:forEach var="item" items="${order.items}">
+                <tr>
+                  <td>${item.cakename}</td>
+                  <td>${item.quantity}</td>
+                  <td>${item.subtotal}</td>
+                </tr>
+              </c:forEach>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </c:forEach>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
