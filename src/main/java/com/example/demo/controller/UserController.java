@@ -76,6 +76,4 @@ public class UserController {
         return "redirect:/cname"; // 重定向到登入頁面
     }
     
-    
-
 }
