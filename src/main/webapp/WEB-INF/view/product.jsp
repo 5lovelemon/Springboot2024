@@ -144,7 +144,7 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="/cname">會員登入/註冊</a>
+            <a class="nav-link" href="/cname">登入</a>
           </li>
           
           <li class="nav-item">
