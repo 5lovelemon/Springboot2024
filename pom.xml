@@ -58,12 +58,6 @@
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
 		
-		<!-- Spring Security 依賴 06/26登入登出-->
-   		 <dependency>
-        <groupId>org.springframework.boot</groupId>
-     	   <artifactId>spring-boot-starter-security</artifactId>
-    	</dependency>
-		
 		<!-- Spring Boot Starter Web -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
