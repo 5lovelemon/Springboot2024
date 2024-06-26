@@ -62,6 +62,7 @@ public class UserController {
     public String login(@RequestParam String email, @RequestParam String password, Model model, HttpSession session) {
         Optional<User> userOpt = userService.getUserByEmail(email);
         if (userOpt.isPresent() && userOpt.get().getPassword().equals(password)) {
+        	session.setAttribute("loggedInUser", userOpt.get());
             return "redirect:/cake"; // 登入成功，跳转到首页
         } else {
             model.addAttribute("message", "登入失敗，用戶名或密碼錯誤");
