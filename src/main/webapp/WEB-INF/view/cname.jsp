@@ -35,7 +35,7 @@
   <div class="background-container">
     <div class="login-container">
       <h2>會員登入</h2>
-      <form action="/cname" method="post">
+      <form action="/cname" method="post" onsubmit="return validateForm()">
         <div class="form-group">
           <label for="email">帳號：</label>
           <input type="email" id="email" name="email" required>
@@ -64,5 +64,20 @@
     </div>
   </div>
 </body>
+
+<script>
+function validateForm() {
+  var email = document.getElementById("email").value;
+  var password = document.getElementById("password").value;
+  
+  // 进行必要的验证，例如检查邮箱格式等
+  if (!email || !password) {
+    alert("請填寫完整的帳號和密碼！");
+    return false;
+  }
+  
+  return true;
+}
+</script>
 
 </html>
